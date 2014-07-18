@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}Contact: {{ app['myappname'] }}{% endblock page_title %}
+
+{% block content %}
+    <h1>Contact Form</h1>
+    {% if message is defined %}
+        <div class="alert alert-dismissable alert-{{ message_type }}">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span>{{ message }}</span>
+        </div>
+    {% endif %}
+    {{ form(form, {'action': path('contact'), 'method': 'POST'}) }}
+{% endblock content%}
+
+
+

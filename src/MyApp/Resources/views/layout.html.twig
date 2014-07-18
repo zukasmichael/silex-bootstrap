@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+        <link rel="shortcut icon" href="{{ app.request.basepath }}/img/icon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ app.request.basepath }}/img/icon.ico">
+        <title>{% block page_title %}{% endblock page_title %}</title>
+        <link rel="stylesheet" href="{{ app.request.basepath }}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ app.request.basepath }}/css/style.css">
+    </head>
+    <body {% block body_class %}{% endblock body_class %}>
+        <div id="container">{% block content %}{% endblock content %}</div>
+        <footer>{% block footer %}{% endblock footer %}</footer>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="{{ app.request.basepath }}/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ app.request.basepath }}/js/script.js"></script>
+    </body>
+</html>
+

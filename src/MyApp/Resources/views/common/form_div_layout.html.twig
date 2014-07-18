@@ -1,0 +1,94 @@
+{% extends "form_div_layout.html.twig" %}
+
+{# Attributes #}
+
+{% block widget_attributes %}
+{% set attr = attr|merge({class: 'form-control'}) %}
+{{ parent() }}
+{% endblock widget_attributes %}
+
+{# Form #}
+
+{% block form %}
+{% spaceless %}
+    {{ form_start(form, {attr: {class: 'form-horizontal', role: 'form'}}) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endspaceless %}
+{% endblock form %}
+
+{# Widgets #}
+
+{% block submit_widget %}
+    {% set class = attr.class ~ ' btn btn-default' %}
+    {% set attr = attr|merge({class: class}) %}
+    {% set type = type|default('submit') %}
+    {{ block('button_widget') }}
+{% endblock %}
+
+{# Labels #}
+
+{% block form_label %}
+{% spaceless %}
+    {% if in_choice_list is defined and in_choice_list and widget is defined %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({for: id}) %}
+        {% endif %}
+        {% if required %}
+            {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' required')|trim}) %}
+        {% endif %}
+        {% if label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+
+        {% if multiple is defined and multiple %}
+            {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' checkbox')|trim}) %}
+        {% elseif multiple is defined and not multiple %}
+            {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' radio')|trim}) %}
+        {% endif %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+                    {{ widget|raw }}
+            <span>
+                    {{ label|trans({}, translation_domain) }}
+            </span>
+        </label>
+    {% else %}
+        {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' col-sm-2 control-label')|trim}) %}
+        {{ parent() }}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_label %}
+
+{# Rows #}
+
+{% block form_row %}
+{% spaceless %}
+<div class="form-group{% if not compound and not form.vars.valid %} has-error{% endif %}">
+        {{ form_label(form, label|default(null)) }}
+        <div class="col-sm-10 controls">
+                {{ form_widget(form) }}
+                {{ form_errors(form) }}
+        </div>
+</div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{# Error #}
+
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <div class="alert alert-danger error">
+        {{ parent() }}<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+    </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{# Submit #}
+
+{% block submit_row %}
+<div class="form-group form-actions">
+        {{ form_widget(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    {% if 404 == code %}
+        <h2>Oopsy... Page not found!</h2>
+        <p>What you are trying to find does not exists</p>
+    {% else %}
+        <h2>Oopsy... Something went wrong!</h2>
+        <p>Don't worry we are fixing the issue. Please visit the site later.</p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+#container {
+    padding: 10px 40px;
+    background: #F7F7F7;
+}
+
+.form-group.has-error .error {
+    overflow: hidden;
+    padding: 8px;
+}
+
+.form-group.has-error .error ul {
+    float: left;
+}
+
+footer {
+    background: #474747;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
