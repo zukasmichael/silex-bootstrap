@@ -1,5 +1,6 @@
 silex-bootstrap
 ===============
+[![Build Status](https://travis-ci.org/satrun77/silex-bootstrap.svg?branch=master)](https://travis-ci.org/satrun77/silex-bootstrap)
 
 A simple bootstrap to get started with a new Silex project.
 
