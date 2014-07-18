@@ -1,5 +1,5 @@
 /nbproject/
-/app/Resources/log/*
+/app/Resources/log/*.log
 /app/Resources/cache/*
 /vendor
 /composer.lock
