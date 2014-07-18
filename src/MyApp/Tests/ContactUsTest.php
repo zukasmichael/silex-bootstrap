@@ -21,7 +21,7 @@ class ContactUsTest extends \Moo\Silex\WebTestCase
     {
         $response = $this->formRequest(array(
             'name'    => 'John Doe',
-            'email'   => 'john@doe.com',
+            'email'   => 'satrun77@hotmail.com',
             'subject' => 'Who am I?',
             'message' => 'I want to know, who am I?',
         ));
@@ -33,7 +33,7 @@ class ContactUsTest extends \Moo\Silex\WebTestCase
     {
         $response = $this->formRequest(array(
             'name'    => 'John Doe',
-            'email'   => 'john@doe.com',
+            'email'   => 'satrun77@hotmail.com',
             'subject' => 'Question?',
             'message' => 'I',
         ));
