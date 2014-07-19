@@ -1,6 +1,8 @@
 /nbproject/
-/app/Resources/log/*.log
-/app/Resources/cache/*
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
 /vendor
 /composer.lock
 /composer.phar
