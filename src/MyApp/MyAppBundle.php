@@ -36,8 +36,7 @@ class MyAppBundle extends \Moo\Silex\AbstractBundle
     protected function controllers()
     {
         $this->addController('index', 'Index', array(
-            'get.contact' => '/contact',
-            'post.contact' => '/contact',
+            'match.contact' => '/contact',
             'get.index' => '/{name}',
         ));
     }

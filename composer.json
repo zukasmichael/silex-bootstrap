@@ -28,7 +28,7 @@
         "symfony/yaml": "~2.3",
         "symfony/browser-kit": ">=2.3",
         "swiftmailer/swiftmailer": ">=4.1.2",
-        "suncat/php-mobile-detect": "dev-master"
+        "suncat/php-mobile-detect": ">=v2.0.9"
     },
     "autoload": {
         "psr-0": {

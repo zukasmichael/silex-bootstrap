@@ -55,7 +55,7 @@ abstract class AbstractBundle
 
         // logs
         $this->app->register(new MonologServiceProvider(), array(
-            'monolog.logfile' => $this->getAppResourcesDir('log') . '.log',
+            'monolog.logfile' => $this->getAppResourcesDir('logs') . '.log',
             'monolog.name'    => 'app',
             'monolog.level'   => 300 // = Logger::WARNING
         ));
@@ -160,7 +160,7 @@ abstract class AbstractBundle
      */
     protected function getAppResourcesDir($resource)
     {
-        return $this->app['app_dir'] . '/Resources/' . $resource . '/' . $this->name;
+        return $this->app['app_dir'] . '/' . $resource . '/' . $this->name;
     }
 
     /**
