@@ -13,6 +13,21 @@ A simple bootstrap to get started with a new Silex project.
   * Read composer [Getting Started](https://getcomposer.org/doc/00-intro.md)
 3. Run tests.
   * phpunit -c app
+4. Run behat tests.
+  * Download Selenium server from http://seleniumhq.org/download/
+  * Open a command line interface and execute
+  ```bash
+  $ java -jar /path/to/your/selenium/server/selenium-server-standalone-2.NN.N.jar
+  ```
+  * Start php local server
+  * Open another command line interface and navigate to silex-bootstrap root directory and execute
+  ```bash
+  $ php -S localhost:8000 -t web
+  ```
+  * Execute behat tests
+  ```bash
+  $ bin/behat --config src/MyApp/behat.yml
+  ```
 
 ## License
 
