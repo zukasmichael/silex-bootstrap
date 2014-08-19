@@ -87,9 +87,9 @@ abstract class AbstractBundle
 
         // Add simple 'asset' function
         $this->app['twig'] = $this->app->share(
-                $this->app->extend('twig', function($twig, $app) {
+                $this->app->extend('twig', function(\Twig_Environment $twig, \Silex\Application $app) {
                     $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) use ($app) {
-                        return '/' . ltrim($asset, '/');
+                        return $app['request']->getBasePath() . '/' . ltrim($asset, '/');
                     }));
                     return $twig;
                 })
