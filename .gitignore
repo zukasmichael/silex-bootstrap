@@ -4,6 +4,5 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 /vendor
-/composer.lock
 /composer.phar
 /bin/
