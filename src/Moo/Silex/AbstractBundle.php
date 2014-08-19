@@ -17,6 +17,7 @@ use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use Symfony\Component\Yaml\Yaml;
+use Silex\Provider\WebProfilerServiceProvider;
 
 /**
  * AbstractBundle contains abstracted/helper methods that are needed for a bundle implementation.
@@ -93,6 +94,11 @@ abstract class AbstractBundle
                     return $twig;
                 })
         );
+
+        // web profiler
+        $this->app->register(new WebProfilerServiceProvider(), array(
+            'profiler.cache_dir'    => $this->app['cache.path'] . '/profiler',
+        ));
 
         // setup bundle controllers
         $this->controllers();
