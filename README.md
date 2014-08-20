@@ -2,6 +2,8 @@ silex-bootstrap
 ===============
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/cf420dea-49e1-4a97-a9a8-7f47f8349843/mini.png)](https://insight.sensiolabs.com/projects/cf420dea-49e1-4a97-a9a8-7f47f8349843)
 [![Build Status](https://travis-ci.org/satrun77/silex-bootstrap.svg?branch=master)](https://travis-ci.org/satrun77/silex-bootstrap)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/satrun77/silex-bootstrap/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silex-bootstrap/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/satrun77/silex-bootstrap/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silex-bootstrap/?branch=master)
 
 A simple bootstrap to get started with a new Silex project.
 

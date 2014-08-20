@@ -15,5 +15,8 @@ before_script:
   - "(java -jar selenium-server-standalone-2.42.2.jar &) 2> /dev/null > /dev/null"
   - sleep 5
 
-script: phpunit -c app && bin/behat --config src/MyApp/behat.yml -v
+script: phpunit -c app --coverage-clover=coverage.clover && bin/behat --config src/MyApp/behat.yml -v
 
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
