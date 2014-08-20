@@ -58,7 +58,7 @@ class IndexController extends \Moo\Silex\AbstractController
     /**
      * Returns an instance of the contact form
      *
-     * @return \Symfony\Component\Form\FormBuilderInterface
+     * @return \Symfony\Component\Form\Form
      */
     protected function getContactForm()
     {

@@ -149,10 +149,12 @@ abstract class AbstractBundle
      */
     protected function loadParameters()
     {
-        $params = Yaml::parse($this->getBaseDir('Resources/data/parameters.yml'));
-        foreach ($params as $paramName => $paramValue) {
-            if (!$this->app->offsetExists($paramName)) {
-                $this->app[$paramName] = $paramValue;
+        $params = Yaml::parse(file_get_contents($this->getBaseDir('Resources/data/parameters.yml')));
+        if (is_array($params)) {
+            foreach ($params as $paramName => $paramValue) {
+                if (!$this->app->offsetExists($paramName)) {
+                    $this->app[$paramName] = $paramValue;
+                }
             }
         }
         return $this;

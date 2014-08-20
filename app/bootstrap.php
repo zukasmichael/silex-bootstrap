@@ -15,7 +15,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 //+----------- setup app basic settings -----------+//
 
-use Symfony\Component\HttpKernel\Exception;
+use Symfony\Component\HttpKernel\Exception\HttpException as HttpException;
 
 $app = new \Silex\Application();
 $app['debug'] = defined('DEBUG')? DEBUG : false;
@@ -27,11 +27,11 @@ $app->register(new \Silex\Provider\TranslationServiceProvider(), array(
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-$app->error(function (\Exception $e, $code) use ($app) {
+$app->error(function (\Exception $e) use ($app) {
     if ($app['debug']) {
         return;
     }
-    $code = ($e instanceof Exception\HttpException) ? $e->getStatusCode() : 500;
+    $code = ($e instanceof HttpException) ? $e->getStatusCode() : 500;
 
     return $app['twig']->render('error.html.twig', array('code' => $code, 'e' => $e));
 });
