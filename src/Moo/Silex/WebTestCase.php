@@ -32,7 +32,7 @@ abstract class WebTestCase extends BaseWebTestCase
      */
     protected function getBundle()
     {
-        if (null == $this->bundle) {
+        if (null === $this->bundle) {
             $this->bundle = $this->createBundle();
         }
 
