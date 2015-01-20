@@ -16,7 +16,7 @@
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "~1.1",
-        "monolog/monolog": "~1.6",
+        "monolog/monolog": "~1.12",
         "symfony/monolog-bridge": "2.5.2",
         "symfony/twig-bridge": "2.5.2",
         "twig/twig": "~1.10",
