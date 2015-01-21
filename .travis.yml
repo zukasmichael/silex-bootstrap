@@ -11,8 +11,8 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "export DISPLAY=:99.0"
   - "(php -S localhost:8000 -t web &) 2> /dev/null > /dev/null"
-  - "wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar"
-  - "(java -jar selenium-server-standalone-2.42.2.jar &) 2> /dev/null > /dev/null"
+  - "wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar"
+  - "(java -jar selenium-server-standalone-2.44.0.jar &) 2> /dev/null > /dev/null"
   - sleep 5
 
 script: phpunit -c app --coverage-clover=coverage.clover && bin/behat --config src/MyApp/behat.yml -v
